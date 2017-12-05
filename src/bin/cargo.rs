@@ -398,6 +398,8 @@ fn search_directories(config: &Config) -> Vec<PathBuf> {
 }
 
 fn init_git_transports(config: &Config) {
+    println!("init_git_transports() called with config {:?}", config);
+
     // Only use a custom transport if a proxy is configured, right now libgit2
     // doesn't support proxies and we have to use a custom transport in this
     // case. The custom transport, however, is not as well battle-tested.

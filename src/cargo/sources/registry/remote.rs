@@ -153,6 +153,8 @@ impl<'cfg> RegistryData for RemoteRegistry<'cfg> {
     }
 
     fn update_index(&mut self) -> CargoResult<()> {
+        println!("in update_index()")
+
         // Ensure that we'll actually be able to acquire an HTTP handle later on
         // once we start trying to download crates. This will weed out any
         // problems with `.cargo/config` configuration related to HTTP.

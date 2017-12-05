@@ -630,6 +630,8 @@ impl Config {
     }
 
     pub fn http(&self) -> CargoResult<&RefCell<Easy>> {
+        println!("in Config.http()");
+
         let http = self.easy.get_or_try_init(|| {
             ops::http_handle(self).map(RefCell::new)
         })?;

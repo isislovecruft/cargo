@@ -239,6 +239,8 @@ pub fn registry(config: &Config,
                 token: Option<String>,
                 index: Option<String>,
                 registry: Option<String>) -> CargoResult<(Registry, SourceId)> {
+    println!("in registry()");
+
     // Parse all configuration options
     let RegistryConfig {
         token: token_config,
